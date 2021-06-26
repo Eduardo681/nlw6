@@ -1,19 +1,23 @@
+@import 'common';
+
 .room-code {
   height: 40px;
-  border-radius: 8px;
+  border-radius: $border-radius;
   overflow: hidden;
   background: #fff;
-  border: 1px solid #835afd;
+  border: 1px solid $primary-color;
   cursor: pointer;
   display: flex;
+
   div {
-    background: #835afd;
+    background: $primary-color;
     padding: 0 12px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     height: 100%;
   }
+
   span {
     display: block;
     align-self: center;
@@ -23,5 +27,14 @@
     font-size: 14px;
     font-weight: 500;
     white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: $max-width-mobile) {
+  .room-code{
+    span {
+      white-space: normal;
+
+    }
   }
 }

@@ -1,0 +1,17 @@
+@import 'variables';
+
+@mixin separator {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: $separator-color;
+  margin-right: 16px;
+}
+
+@mixin transition {
+  transition: filter 0.2s;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}

@@ -1,7 +1,10 @@
+@import 'common';
+
 #page-room {
   header {
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
+
     .content {
       max-width: 1120px;
       margin: 0 auto;
@@ -11,12 +14,13 @@
 
       > img {
         max-height: 45px;
+        margin-right: 10px;
       }
 
       > div {
         display: flex;
         gap: 16px;
-        
+
         button {
           height: 45px;
         }
@@ -34,11 +38,12 @@
       align-items: center;
 
       h1 {
-        font-family: "Poppins", sans-serif;
+        font-family: $poppins;
       }
+
       span {
         margin-left: 16px;
-        background: #e559f9;
+        background: $questions-counter;
         border-radius: 9999px;
         padding: 8px 16px;
         color: #fff;
@@ -52,12 +57,13 @@
         width: 100%;
         border: 0;
         padding: 16px;
-        border-radius: 8px;
+        border-radius: $border-radius;
         background: #fefefe;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         resize: vertical;
         min-height: 130px;
+        @include box-shadow;
       }
+
       .form-footer {
         display: flex;
         justify-content: space-between;
@@ -67,14 +73,16 @@
         .user-info {
           display: flex;
           align-items: center;
+
           img {
             width: 32px;
             height: 32px;
             border-radius: 50%;
           }
+
           span {
             margin-left: 8px;
-            color: #29292e;
+            color: $font-color;
             font-size: 14px;
             font-weight: 500;
           }
@@ -82,13 +90,13 @@
 
         > span {
           font-size: 14px;
-          color: #737380;
+          color: $gray;
           font-weight: 500;
 
           button {
             background: transparent;
             border: 0;
-            color: #835afd;
+            color: $primary-color;
             text-decoration: underline;
             font-size: 14px;
             cursor: pointer;
@@ -97,8 +105,29 @@
         }
       }
     }
-    .question-list{
+
+    .question-list {
       margin-top: 32px;
+    }
+  }
+}
+
+@media only screen and (max-width: $max-width-mobile) {
+  #page-room {
+    header {
+      .content {
+        &.admin {
+          flex-direction: column;
+
+          > div {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    main {
+      padding: 0 20px;
     }
   }
 }
